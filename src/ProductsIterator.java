@@ -13,9 +13,11 @@ public class ProductsIterator {
     }
 
     private static String GetProductNames(ArrayList<Product> products) {
-      StringBuilder list = new StringBuilder();
+        StringBuilder list = new StringBuilder();
+        Iterator<Product> iterator = products.iterator();
 
-        for (Product product : products) {
+        while (iterator.hasNext()) {
+            Product product = iterator.next();
             list.append(product.toString());
         }
         return list.toString();
